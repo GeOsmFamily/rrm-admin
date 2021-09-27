@@ -25,12 +25,6 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install zip \
     && docker-php-source delete
 
-RUN set -ex \
-    && apk --no-cache add \
-    postgresql-dev
-
-RUN docker-php-ext-install pdo pdo_pgsql
-
 RUN apt-get install -y apache2
 
 RUN curl -sL https://deb.nodesource.com/setup_11.x | bash - && apt-get install -y nodejs
